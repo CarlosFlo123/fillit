@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 17:31:35 by abao              #+#    #+#             */
-/*   Updated: 2018/08/07 17:04:09 by abao             ###   ########.fr       */
+/*   Updated: 2018/08/09 06:34:31 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int	main (int argc, char **argv)
 		return (1);
 	}
 	pieces = assign(tets);
-	iquSize(pieces);
+	squSize(pieces);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/28 12:11:14 by abao              #+#    #+#             */
-/*   Updated: 2018/08/07 18:21:22 by abao             ###   ########.fr       */
+/*   Updated: 2018/08/09 05:55:28 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct	s_map
 }				t_map;
 
 int				verify(char **tets);
-void			squSize(char *t_tet);
+void			squSize(char **tets);
 t_tet			*assign(char **tets);
 
 #endif
