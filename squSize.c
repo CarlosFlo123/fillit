@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/27 17:34:28 by abao              #+#    #+#             */
-/*   Updated: 2018/07/29 14:39:50 by abao             ###   ########.fr       */
+/*   Updated: 2018/08/09 19:03:14 by abao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@
 ** Return: 
 */
 
-void	squSize(char **tets)
+#include "fillit.h"
+
+void	squSize(t_tet *tets)
 {
 	int		total;
 	int		length;
@@ -27,5 +29,6 @@ void	squSize(char **tets)
 	total = 0;
 	while (tets)
 		total++;
-	
+	length = sqrt(total * 4);
+	//Insert solver here.
 }

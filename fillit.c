@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 17:31:35 by abao              #+#    #+#             */
-/*   Updated: 2018/08/09 06:34:31 by cflores-         ###   ########.fr       */
+/*   Updated: 2018/08/09 16:35:17 by abao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 ** Return: None, but output the finished product.
 */
 
-#include "fillit.h"
 #include <stdio.h>
+#include <fcntl.h>
+#include "fillit.h"
 
 int	main (int argc, char **argv)
 {
@@ -36,7 +37,7 @@ int	main (int argc, char **argv)
 	}
 	filedes = open(argv[1], O_RDONLY);
 	num = read(filedes, original, 1);
-	printf("%s", filedes);
+	printf("%d", filedes);
 	while (num != 0)
 		num = read(filedes, original, 1); 
 	tets = ft_strsplit(original, '\n');
