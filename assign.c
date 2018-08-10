@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 13:15:12 by abao              #+#    #+#             */
-/*   Updated: 2018/08/09 19:31:28 by cflores-         ###   ########.fr       */
+/*   Updated: 2018/08/10 03:14:44 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_tet	*assign(char **tets)
 	char	letter;
 
 	list = (t_tet *)malloc(sizeof(t_list));
-	list
 	letter = 'A';
 	while (tets)
 	{
