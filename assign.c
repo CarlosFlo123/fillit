@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/01 13:15:12 by abao              #+#    #+#             */
-/*   Updated: 2018/08/09 13:25:07 by abao             ###   ########.fr       */
+/*   Updated: 2018/08/09 19:31:28 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Return: The struct array?
  */
 
-#include <stdlib.h>
+#include "fillit.h"
 
 t_tet	*assign(char **tets)
 {

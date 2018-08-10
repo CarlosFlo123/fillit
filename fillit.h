@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/28 12:11:14 by abao              #+#    #+#             */
-/*   Updated: 2018/08/09 16:35:28 by abao             ###   ########.fr       */
+/*   Updated: 2018/08/10 03:02:05 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
 typedef struct	s_tet
 {

@@ -6,22 +6,33 @@
 #    By: abao <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/27 14:04:17 by abao              #+#    #+#              #
-#    Updated: 2018/07/27 17:18:50 by abao             ###   ########.fr        #
+#    Updated: 2018/08/10 01:27:23 by cflores-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
 
+CFLAGS = -libft -I fillit.h
+
+SRC = placeBlock.c \
+	  tet_add.c \
+	  verify.c \
+	  fillit.c \
+	  squSize.c \
+	  tet_new.c
+
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
+$(NAME):
+	@gcc -o $(CFLAGS) -Wall -Wextra -Werror $(SRC)
+	@ar rc $(NAME) $(OBJ)
+
 clean:
-	/bin/rm -f $(OBJS)
-	/bin/rm -rf a.out.dSYM
+	@rm -f *.o
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all

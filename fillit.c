@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 17:31:35 by abao              #+#    #+#             */
-/*   Updated: 2018/08/09 16:35:17 by abao             ###   ########.fr       */
+/*   Updated: 2018/08/10 02:59:35 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 ** Return: None, but output the finished product.
 */
 
-#include <stdio.h>
-#include <fcntl.h>
 #include "fillit.h"
 
 int	main (int argc, char **argv)
@@ -30,6 +28,7 @@ int	main (int argc, char **argv)
 	int		filedes;
 	t_tet	*pieces;
 
+	original = 0;
 	if (argc != 2)
 	{
 		ft_putstr("usage: fillit input_file\n");
