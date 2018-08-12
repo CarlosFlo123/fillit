@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 /*
-** Main program to run Fillit. 
+** Main program to run Fillit.
 ** First reads the given file into a string by opening file into a descriptor.
-** Uses split to divide the string, then calls squSize for the rest. 
+** Uses split to divide the string, then calls squSize for the rest.
 ** Param: File to read.
 ** Return: None, but output the finished product.
 */
@@ -22,6 +22,7 @@
 
 int	main (int argc, char **argv)
 {
+	printf("HI");
 	char	*original;
 	char	**tets;
 	size_t	num;
@@ -34,7 +35,9 @@ int	main (int argc, char **argv)
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
+	printf("HELLO");
 	filedes = open(argv[1], O_RDONLY);
+	printf("HELLO");
 	num = read(filedes, original, 1);
 	printf("%d", filedes);
 	while (num != 0)
