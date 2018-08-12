@@ -22,12 +22,11 @@
 
 int	main (int argc, char **argv)
 {
-	printf("HI");
 	char	*original;
-	char	**tets;
+	//char	**tets;
 	size_t	num;
 	int		filedes;
-	t_tet	*pieces;
+	//t_tet	*pieces;
 
 	original = 0;
 	if (argc != 2)
@@ -35,11 +34,12 @@ int	main (int argc, char **argv)
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
-	printf("HELLO");
 	filedes = open(argv[1], O_RDONLY);
-	printf("HELLO");
-	num = read(filedes, original, 1);
-	printf("%d", filedes);
+	printf("%i", filedes);
+	num = read(filedes, original, 4);
+	printf("%lu", num);
+	printf("%s", original);
+	/*
 	while (num != 0)
 		num = read(filedes, original, 1); 
 	tets = ft_strsplit(original, '\n');
@@ -49,6 +49,6 @@ int	main (int argc, char **argv)
 		return (1);
 	}
 	pieces = assign(tets);
-	squSize(pieces);
+	squSize(pieces);*/
 	return (0);
 }
