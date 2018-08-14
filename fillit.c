@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 17:31:35 by abao              #+#    #+#             */
-/*   Updated: 2018/08/10 02:59:35 by cflores-         ###   ########.fr       */
+/*   Updated: 2018/08/14 03:42:25 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,16 @@ int	main (int argc, char **argv)
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
+	original = ft_strnew(21);
 	filedes = open(argv[1], O_RDONLY);
-	printf("%i", filedes);
-	num = read(filedes, original, 4);
-	printf("%lu", num);
-	printf("%s", original);
-	/*
+	num = read(filedes, original, 21);
+	printf("%lu\n", num);
 	while (num != 0)
-		num = read(filedes, original, 1); 
+	{
+		num = read(filedes, original, 21);
+		printf("%s", original);
+	}
+	/*
 	tets = ft_strsplit(original, '\n');
 	if (verify(tets) != 1)
 	{
