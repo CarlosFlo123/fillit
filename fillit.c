@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 17:31:35 by abao              #+#    #+#             */
-/*   Updated: 2018/08/14 03:42:25 by cflores-         ###   ########.fr       */
+/*   Updated: 2018/08/15 01:02:53 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,35 +22,27 @@
 
 int	main (int argc, char **argv)
 {
-	char	*original;
-	//char	**tets;
-	size_t	num;
-	int		filedes;
-	//t_tet	*pieces;
+	char	**tets;
+	int i = 0;
 
-	original = 0;
 	if (argc != 2)
 	{
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
-	original = ft_strnew(21);
-	filedes = open(argv[1], O_RDONLY);
-	num = read(filedes, original, 21);
-	printf("%lu\n", num);
-	while (num != 0)
-	{
-		num = read(filedes, original, 21);
-		printf("%s", original);
-	}
-	/*
-	tets = ft_strsplit(original, '\n');
-	if (verify(tets) != 1)
+	tets = (char **) malloc(sizeof(char *) * 27);
+	tets = read_file(argv[1]);
+	/*if (verify(tets) != 1)
 	{
 		ft_putstr("error");
 		return (1);
+	}*/
+	while (tets[i])
+	{
+		printf("%s", tets[i]);
+		i++;
 	}
-	pieces = assign(tets);
-	squSize(pieces);*/
+	//pieces = assign(tets);
+	//squSize(pieces);
 	return (0);
 }
