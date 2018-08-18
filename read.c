@@ -19,18 +19,21 @@ char	**read_file(char *input)
 	size_t	num;
 	int		filedes;
 
+	num = -1;
 	original = 0;
 	original = ft_strnew(21);
 	filedes = open(input, O_RDONLY);
-	num = read(filedes, original, 21);
-	printf("%s", original);
+	tets = (char **) malloc(sizeof(char*) * 27);
 	while (num != 0)
 	{
-		num = read(filedes, original, 21);
 		printf("%s", original);
+		tets = ft_strsplit(original, '\n');
+		while (*tets != 0)
+		{
+			printf("%c\n", **tets);
+			tets++;
+		}
+		num = read(filedes, original, 21);
 	}
-	printf("\n\n%s", original);
-	tets = (char **) malloc(sizeof(char*) * 27);
-	tets = ft_strsplit(original, '\n');
 	return (tets);
 }
