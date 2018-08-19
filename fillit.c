@@ -37,11 +37,11 @@ int	main (int argc, char **argv)
 		ft_putstr("error");
 		return (1);
 	}*/
-	while (tets[i])
+	/*while (tets[i])
 	{
 		printf("%s", tets[i]);
 		i++;
-	}
+	}*/
 	//pieces = assign(tets);
 	//squSize(pieces);
 	return (0);
