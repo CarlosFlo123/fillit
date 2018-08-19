@@ -62,6 +62,6 @@ void				tet_add(t_tet **list, t_tet *n);
 t_tet				*tet_new(void *content);
 char				**ft_strsplit(char const *s, char splitchars);
 void				ft_putstr(char const *s);
-char				**read_file(char *input);
+char				***read_file(char *input);
 
 #endif

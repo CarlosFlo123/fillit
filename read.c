@@ -6,34 +6,32 @@
 /*   By: cflores- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/14 20:50:46 by cflores-          #+#    #+#             */
-/*   Updated: 2018/08/15 01:11:20 by cflores-         ###   ########.fr       */
+/*   Updated: 2018/08/16 01:40:22 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	**read_file(char *input)
+char	***read_file(char *input)
 {
 	char	*original;
-	char	**tets;
+	char	***tets;
 	size_t	num;
 	int		filedes;
+	int 	i;
 
-	num = -1;
 	original = 0;
+	num = 2;
+	i = 0;
 	original = ft_strnew(21);
+	tets = (char ***) malloc(sizeof(char**) * 27);
 	filedes = open(input, O_RDONLY);
-	tets = (char **) malloc(sizeof(char*) * 27);
 	while (num != 0)
 	{
-		printf("%s", original);
-		tets = ft_strsplit(original, '\n');
-		while (*tets != 0)
-		{
-			printf("%c\n", **tets);
-			tets++;
-		}
+		//printf("%s", original);
+		tets[i] = ft_strsplit(original, '\n');
 		num = read(filedes, original, 21);
+		i++;
 	}
 	return (tets);
 }
