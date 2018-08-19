@@ -22,35 +22,36 @@
 
 int	main (int argc, char **argv)
 {
-	char	***tets;
+	char	***readed_file;
 	int i = 0;
 	int j = 0;
+	//s_tet 	tets[];
 
 	if (argc != 2)
 	{
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
-	tets = (char ***) malloc(sizeof(char **) * 27);
-	tets = read_file(argv[1]);
+	readed_file = (char ***) malloc(sizeof(char **) * 27);
+	readed_file = read_file(argv[1]);
 	/*if (verify(tets) != 1)
 	{
 		ft_putstr("error");
 		return (1);
 	}*/
-	while (tets[i])
+	while (readed_file[i])
 	{
 		j = 0;
-		while (tets[i][j])
+		while (readed_file[i][j])
 		{
-			printf("%s\n", tets[i][j]);
+			printf("%s\n", readed_file[i][j]);
 			j++;
 		}
 		printf("\n");
 		i++;
 	}
 
-	//pieces = assign(tets);
+	//pieces = assign(readed_file);
 	//squSize(pieces);
 	return (0);
 }
