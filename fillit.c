@@ -43,7 +43,7 @@ int	main (int argc, char **argv)
 		j = 0;
 		while (tets[i][j])
 		{
-		printf("%s\n", tets[i][j]);
+			printf("%s\n", tets[i][j]);
 			j++;
 		}
 		printf("\n");
