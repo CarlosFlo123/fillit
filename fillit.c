@@ -25,7 +25,8 @@ int	main (int argc, char **argv)
 	char	***readed_file;
 	int i = 0;
 	int j = 0;
-	//s_tet 	tets[];
+	//int con = 0;
+	t_tet 	*tets = 0;
 
 	if (argc != 2)
 	{
@@ -34,6 +35,41 @@ int	main (int argc, char **argv)
 	}
 	readed_file = (char ***) malloc(sizeof(char **) * 27);
 	readed_file = read_file(argv[1]);
+
+	tets = malloc(sizeof(t_tet));
+	
+
+	while (readed_file[i])
+	{
+		j = 0;
+		while (readed_file[i][j])
+		{
+			printf("%s\n", readed_file[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+
+
+
+	while (*readed_file++)
+	{
+		while (**readed_file++)
+		{
+			while (***readed_file++)
+			{
+				if (***readed_file == '#')
+				{
+					tets->point.x = 0;
+					tets->point.y = 0;
+
+				}
+
+			}
+		}
+
+	}
 	/*if (verify(tets) != 1)
 	{
 		ft_putstr("error");
