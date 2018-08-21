@@ -33,12 +33,15 @@ int	main (int argc, char **argv)
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
+	printf("TE TENGO");
 	readed_file = (char ***) malloc(sizeof(char **) * 27);
 	readed_file = read_file(argv[1]);
 
+	
 	tets = malloc(sizeof(t_tet));
 	
 
+	
 	while (readed_file[i])
 	{
 		j = 0;
@@ -52,7 +55,7 @@ int	main (int argc, char **argv)
 	}
 
 
-
+	printf("TE TENGO");
 	while (*readed_file++)
 	{
 		while (**readed_file++)
@@ -61,14 +64,14 @@ int	main (int argc, char **argv)
 			{
 				if (***readed_file == '#')
 				{
-					tets->point.x = 0;
+					/*tets->point.x = 0;
 					tets->point.y = 0;
 
+					tets->letter = ' ';
+					tets->next = 0;*/
 				}
-
 			}
 		}
-
 	}
 	/*if (verify(tets) != 1)
 	{
