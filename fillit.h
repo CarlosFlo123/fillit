@@ -36,8 +36,8 @@ typedef struct		s_point
 
 typedef struct		tetro
 {
-	char			**x;
-	char			**y;
+	int				x[3];
+	int				y[3];
 }					t_tetro;
 
 typedef struct		s_tet
@@ -63,5 +63,11 @@ t_tet				*tet_new(void *content);
 char				**ft_strsplit(char const *s, char splitchars);
 void				ft_putstr(char const *s);
 char				***read_file(char *input);
+int					map_size(int *list);
+char				**make_map(int size, char **mapy);
+void				free_map(char **map);
+void				print_map(char **map, int size);
+
+
 
 #endif

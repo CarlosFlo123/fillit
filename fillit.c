@@ -23,10 +23,14 @@
 int	main (int argc, char **argv)
 {
 	char	***readed_file;
-	int i = 0;
-	int j = 0;
-	//int con = 0;
+	int 	i = 0;
+	int 	j = 0;
+	int 	k = 0;
+	int 	flag = 0;
+	//char 	letter = 'A';
+	int con = 0;
 	t_tet 	*tets = 0;
+	t_tet	*tmp = 0;
 
 	if (argc != 2)
 	{
@@ -39,23 +43,58 @@ int	main (int argc, char **argv)
 
 	
 	tets = malloc(sizeof(t_tet));
-	
+	tmp = tets;
+	tets->next = 0;
 
-	
+
 	while (readed_file[i])
 	{
 		j = 0;
+		//tets->letter = letter;
+		//letter++;
+		if (flag == 1)
+		{
+			tets->next = malloc(sizeof( t_tet));
+			tets = (t_tet*)tets->next;
+		}
+		flag = 0;
+		con = 0;
 		while (readed_file[i][j])
 		{
-			printf("%s\n", readed_file[i][j]);
+			k = 0;
+
+			while (readed_file[i][j][k])
+			{
+				printf("%c", readed_file[i][j][k]);
+				if (readed_file[i][j][k] == '#')
+				{
+					if (flag == 0)
+					{
+						flag = 1;
+						tets->point.x = j;
+						tets->point.y = k;
+					}
+					else
+					{
+						tets->body.x[con] = k - tets->point.x;
+						tets->body.y[con] = j - tets->point.y;
+						con++;		
+					}
+				}
+				k++;
+			}
+			printf("\n");
 			j++;
 		}
+		tets->next = 0;
 		printf("\n");
 		i++;
 	}
 
+	//while ()
 
-	printf("TE TENGO");
+
+	/*printf("TE TENGO");
 	while (*readed_file++)
 	{
 		while (**readed_file++)
@@ -64,21 +103,23 @@ int	main (int argc, char **argv)
 			{
 				if (***readed_file == '#')
 				{
-					/*tets->point.x = 0;
+					tets->point.x = 0;
 					tets->point.y = 0;
 
 					tets->letter = ' ';
-					tets->next = 0;*/
+					tets->next = 0;
 				}
 			}
 		}
-	}
+	}*/
 	/*if (verify(tets) != 1)
 	{
 		ft_putstr("error");
 		return (1);
 	}*/
-	while (readed_file[i])
+
+	//AUXILIAR PRINT
+	/*while (readed_file[i])
 	{
 		j = 0;
 		while (readed_file[i][j])
@@ -88,7 +129,7 @@ int	main (int argc, char **argv)
 		}
 		printf("\n");
 		i++;
-	}
+	}*/
 
 	//pieces = assign(readed_file);
 	//squSize(pieces);
