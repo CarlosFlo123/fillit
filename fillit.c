@@ -27,7 +27,7 @@ int	main (int argc, char **argv)
 	int 	j = 0;
 	int 	k = 0;
 	int 	flag = 0;
-	//char 	letter = 'A';
+	char 	letter = 'A';
 	int con = 0;
 	t_tet 	*tets = 0;
 	t_tet	*tmp = 0;
@@ -43,15 +43,15 @@ int	main (int argc, char **argv)
 
 	
 	tets = malloc(sizeof(t_tet));
-	tmp = tets;
 	tets->next = 0;
+	tmp = tets;
 
 
 	while (readed_file[i])
 	{
 		j = 0;
-		//tets->letter = letter;
-		//letter++;
+		tets->letter = letter;
+		letter++;
 		if (flag == 1)
 		{
 			tets->next = malloc(sizeof( t_tet));
@@ -90,8 +90,11 @@ int	main (int argc, char **argv)
 		printf("\n");
 		i++;
 	}
-
-	//while ()
+	while (tmp->next != 0)
+	{
+		printf("\n\nTetro %c:\n\tbody1: x:%i - y:%i\n\tbody2: x:%i - y:%i\n\tbody3: x:%i - y:%i\n\t", tmp->letter, tmp->body.x[0], tmp->body.y[0], tmp->body.x[1], tmp->body.y[1], tmp->body.x[2], tmp->body.y[2]);	
+		tmp = (t_tet*)tmp->next;
+	}
 
 
 	/*printf("TE TENGO");
