@@ -32,7 +32,7 @@ int	main (int argc, char **argv)
 	int 	flag = 0;
 	char 	letter = 'A';
 	int 	con = 0;
-	t_tet 	*tets = 0;
+	t_tet	*tets = 0;
 	t_tet	*tmp = 0;
 
 	if (argc != 2)
@@ -82,10 +82,19 @@ int	main (int argc, char **argv)
 					}
 					else
 					{
-						tets->body.x[con] = k - tets->point.x;
-						tets->body.y[con] = j - tets->point.y;
-						con++;
+						if (tets->point.x != 0 || tets->point.y != 0)
+						{
+							tets->body.x[con] = k - tets->point.x - 1;
+							tets->body.y[con] = j - tets->point.y + 1;
+						}
+						else
+						{
+							tets->body.x[con] = k - tets->point.x;
+							tets->body.y[con] = j - tets->point.y;
+
+						}
 						tets->letter = letter;
+						con++;
 					}
 				}
 				k++;
@@ -96,6 +105,7 @@ int	main (int argc, char **argv)
 		tets->next = 0;
 		if (readed_file[i + 1])
 			printf("\n");
+			
 		i++;
 		letter++;
 	}
@@ -124,7 +134,7 @@ int	main (int argc, char **argv)
 			}
 		}
 	}*/
-	/*if (verify(tets) != 1)
+	/*if (verify(readed_file[0]) != 1)
 	{
 		ft_putstr("error");
 		return (1);

@@ -28,7 +28,7 @@ char	***read_file(char *input)
 	filedes = open(input, O_RDONLY);
 	while (num != 0)
 	{
-		printf("%s", original);
+		//printf("%s", original);
 		num = read(filedes, original, 21);
 		tets[i] = ft_strsplit(original, '\n');
 		i++;
