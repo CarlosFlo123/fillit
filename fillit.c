@@ -6,7 +6,7 @@
 /*   By: abao <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/25 17:31:35 by abao              #+#    #+#             */
-/*   Updated: 2018/08/16 02:03:54 by cflores-         ###   ########.fr       */
+/*   Updated: 2018/08/30 18:37:38 by cflores-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,38 +105,31 @@ int	main (int argc, char **argv)
 		tets->next = 0;
 		if (readed_file[i + 1])
 			printf("\n");
-			
 		i++;
 		letter++;
 	}
-	while (tmp->next != 0)
+	int count = 0;
+	while (!(tmp->next == 0))
+	{	
+		count += 1;
+		tmp = (t_tet *)tmp->next;
+	}
+	printf("\n\n%s%i\n", readed_file[0][0], count);
+	/*while (tmp->next != 0)
 	{
 		printf("\t\n\t\nTetro %c:\n\tbody1: x:%i - y:%i\n\tbody2: x:%i - y:%i\n\tbody3: x:%i - y:%i\n\t", tmp->letter, tmp->body.x[0], tmp->body.y[0], tmp->body.x[1], tmp->body.y[1], tmp->body.x[2], tmp->body.y[2]);	
 		tmp = (t_tet*)tmp->next;
-	}
+	}*/
 	
 
-	/*printf("TE TENGO");
-	while (*readed_file++)
-	{
-		while (**readed_file++)
-		{
-			while (***readed_file++)
-			{
-				if (***readed_file == '#')
-				{
-					tets->point.x = 0;
-					tets->point.y = 0;
-
-					tets->letter = ' ';
-					tets->next = 0;
-				}
-			}
-		}
-	}*/
-	/*if (verify(readed_file[0]) != 1)
+	/*if (verify(*readed_file) != 1)
 	{
 		ft_putstr("error");
+		i = -1;
+		while (readed_file[++i])
+		{
+			printf("%s\n", *readed_file[i]);
+		}
 		return (1);
 	}*/
 
